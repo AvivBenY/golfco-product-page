@@ -6,48 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
+    
+    
+    
   </head>
 
+
   <body>
-    <div class="wrapper">
+    <div class="wrapper">      
+        <div class="carousel">
+         <!-- slider container -->
+          <div class="slider">
+      
+            <!-- slide 1 -->
+            <div class="slide">
+              <img
+                class="slider-image" src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_a-16437966642688711.jpg"
+                alt=""
+              />
+            </div>
+      
+             <!-- slide 2 -->
+            <div class="slide">
+              <img class="slider-image" src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_b-16437966653106807.jpg" alt="" />
+            </div>
+      
+             <!-- slide 3 -->
+            <div class="slide">
+              <img class="slider-image" src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_d-16437966672846269.jpg" alt="" />
+            </div>
+      
+             <!-- slide 4 -->
+            <div class="slide">
+              <img class="slider-image" src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_e-16437966683514640.jpg" alt="" />
+            </div>
+             <!-- slide 5 -->
+            <div class="slide">
+              <img class="slider-image" src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_f-16437966693281811.jpg" alt="" />
+            </div>
+             <!-- slide 6 -->
+            <div class="slide">
+              <img class="slider-image" src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5667947_121_a-16437264162337049.jpg" alt="" />
+            </div>
+      
+             <!-- Control buttons -->
+            <button class="btn btn-next">></button>
+            <button class="btn btn-prev"><</button>
+          </div>
+        </div> 
       <div class="content-container">
         <p>Look of the month</p>
         <p class="header-product-name">סט מצעי כותנה סאטן מודפסים MIA</p>
         <p id="priceRange">Price range min max</p>
-
-        <ul id="ul-content" class="ulContent">
-          <li id="li-product-content" >
-            <div class="contentTblItem" id="contentTblItem">
+        <ul  id="ul-content" class="ulContent">
+          <li onclick="setImages(0);" id="li-product-content" >
+            <div class="contentTblItem" onclick="setPrice()" id="contentTblItem">
               <p id="Pname"></p>
               <p id="Pprice"></p>
             </div>
           </li>
-          <li id="li-product-content">
-            <div class="contentTblItem" id="contentTblItem">
+          <li onclick="setImages(1);" id="li-product-content">
+            <div  class="contentTblItem" onclick="setPrice()" id="contentTblItem">
               <p id="Pname"></p>
               <p id="Pprice"></p>
             </div>
           </li>         
-          <li id="li-product-content">
-            <div class="contentTblItem" id="contentTblItem">
+          <li onclick="setImages(2);" id="li-product-content">
+            <div class="contentTblItem" onclick="setPrice()" id="contentTblItem">
               <p id="Pname"></p>
               <p id="Pprice"></p>
             </div>
           </li>         
-          <li id="li-product-content">
-            <div class="contentTblItem" id="contentTblItem">
+          <li onclick="setImages(3);" id="li-product-content">
+            <div class="contentTblItem" onclick="setPrice()" id="contentTblItem">
               <p id="Pname"></p>
               <p id="Pprice"></p>
             </div>
           </li>         
-          <li id="li-product-content">
-            <div class="contentTblItem" id="contentTblItem">
+          <li onclick="setImages(4);" id="li-product-content">
+            <div class="contentTblItem" onclick="setPrice()" id="contentTblItem">
               <p id="Pname"></p>
               <p id="Pprice"></p>
             </div>
           </li>         
-          <li id="li-product-content">
-            <div class="contentTblItem" id="contentTblItem">
+          <li onclick="setImages(5);" id="li-product-content">
+            <div class="contentTblItem" onclick="setPrice()" id="contentTblItem">
               <p id="Pname"></p>
               <p id="Pprice"></p>
             </div>
@@ -55,21 +98,33 @@
         </ul>
         <div class="cartControl">
           <span id="inc" onclick="cartCounter('+')">+</span>
-          <input type="number" disabled readonly value=1 class="inputText" id="cart-input"></input>
+          <input type="number" disabled  value=1 class="inputText" id="cart-input"></input>
           <span id="dec" onclick="cartCounter('-')">-</span>
         </div>        
         <button class="addToCart">הוספה לסל</button>
         <p>בקניה מעל 249 - משלוח חינם(עד 5 ימי אספקה)</p>
+
         <div class="product-details-div">
+          <div class="tabDiv">
+            <button onclick="changeToDisplay()" class="details-btn" id="detailsBtn">על הפריט</button>
+            <button onclick="changeToShipping()" class="shipping-btn" id="shippingBtn">משלוחים והחזרות</button>
+          </div>
+          <div id="shippingDiv" style="display: none;">
+            בקנייה מעל 299 ש״ח- משלוח חינם.<br/>
+            שליח עד הבית | דואר רשום:<br/>
+            בקנייה עד 149 ₪ - 19 ₪<br/>
+            בקניה מעל 149 ₪  עד 299 ₪- 9 ₪<br/>
+            בקניה מ-299 ₪ - הטבת שליחות חינם<br/>
+            למידע נוסף><br/>
+            החלפות והחזרות<br/>
+            החלפות והחזרות בקלי קלות וללא עלות: עד 14 יום מיום קבלת הפריט, בחנויות רשת Golf&Co.<br/>
+            החזרות והחלפות יתאפשרו בתנאי שהמוצרים יוחזרו ללא פגם ומבלי שנעשה בהם שימוש, באריזה סגורה ובצירוף התווית המקורית.<br/>
+          </div>
           <div id="productDetails" class="product-details">
-            <div class="tabDiv">
-              <button class="details-btn" id="">על הפריט</button>
-              <button class="shipping-btn">משלוחים והחזרות</button>
-            </div>
             <p>תיאור הפריט</p>
             <strong class="static-details"><span>הרכב החומר</span> </strong>
             <span class="static-text">חומר ממנו עשוי</span>
-            <strong><span>מידות</span></strong>
+            <strong class="static-details"><span>מידות</span></strong>
             <ul  id="dbList">
               <li>1פריט מספר</li>
               <li>2פריט מספר</li>
@@ -82,12 +137,12 @@
               <span class="static-text">צפיפות</span>
               <strong class="static-details"><span >הוראות טיפול</span></strong>
               <span class="static-text">הוראות טיפול </span>
-              <strong class="static-details"><span  >מספר דגם</span></strong>
+              <strong class="static-details"><br/><span  >מספר דגם</span></strong>
               <span class="static-text">מספר דגם </span>
-              <span class="static-text">ארץ ייצור </span>
+              <span style="margin-top:8%" class="static-text">ארץ ייצור </span>
           </div>
           <p class="productionText">המוצרים המוצעים באתר מיובאים ע"י/מיובאים/מיוצרים<br/> עבור: קבוצת גולף א.ק. בע"מ (ח.צ. 510289564), רחוב<br/> המלאכה 5, נתניה</p>
-        </div>
+        </div>        
         <div class="clubMembers">
           <div class="clubMembersText">
             <span
@@ -105,51 +160,60 @@
         <ul>
           <div class="columnDiv">
             <li>
+              <figure class="zoom" onmousemove="zoom(event)" style="background-image: url(https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_a-16437966642688711.jpg)">
               <img
                 class="columImage images" 
                 src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_a-16437966642688711.jpg"
-              />
+              /></figure>
             </li>
           </div>
           <div class="rowDiv">
             <li class="liRowImage">
+              <figure class="zoom" onmousemove="zoom(event)" style="background-image: url(https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_b-16437966653106807.jpg)">
               <img
                 class="rowImage images"
                 src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_b-16437966653106807.jpg"
-              />
+              /></figure>
             </li>
             <li class="liRowImage">
+              <figure class="zoom" onmousemove="zoom(event)" style="background-image: url(https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_d-16437966672846269.jpg)">
               <img
                 class="rowImage images"
                 src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_d-16437966672846269.jpg"
-              />
+              /></figure>
             </li>
           </div>
           <div class="columnDiv">
             <li>
-              <img
-                class="columImage images"
-                src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_e-16437966683514640.jpg"
-              />
+              <figure class="zoom" onmousemove="zoom(event)" style="background-image: url(https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_e-16437966683514640.jpg)">
+                <img
+                  class="columImage images"
+                  src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_e-16437966683514640.jpg"
+                />
+              </figure>
             </li>
           </div>
           <div class="rowDiv">
             <li class="liRowImage">
-              <img
-                class="rowImage images"
-                src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_f-16437966693281811.jpg"
-              />
+              <figure class="zoom" onmousemove="zoom(event)" style="background-image: url(https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_f-16437966693281811.jpg)">
+                <img
+                  class="rowImage images"
+                  src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_f-16437966693281811.jpg"
+                  /></figure>
             </li>
             <li class="liRowImage">
+
+              <figure class="zoom" onmousemove="zoom(event)" style="background-image: url(https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5667947_121_a-16437264162337049.jpg)">
               <img
                 class="rowImage images"
                 src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5667947_121_a-16437264162337049.jpg"
-              />
+              /></figure>
+
             </li>
           </div>
         </ul>
       </div>
-    </div>
+    </div> 
     <script src="./main.js"></script>
   </body>
 </html>
