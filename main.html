@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="content-container">
+        <p>Look of the month</p>
+        <p class="header-product-name">סט מצעי כותנה סאטן מודפסים MIA</p>
+        <p id="priceRange">Price range min max</p>
+
+        <ul id="ul-content" class="ulContent">
+          <li id="li-product-content" >
+            <div class="contentTblItem" id="contentTblItem">
+              <p id="Pname"></p>
+              <p id="Pprice"></p>
+            </div>
+          </li>
+          <li id="li-product-content">
+            <div class="contentTblItem" id="contentTblItem">
+              <p id="Pname"></p>
+              <p id="Pprice"></p>
+            </div>
+          </li>         
+          <li id="li-product-content">
+            <div class="contentTblItem" id="contentTblItem">
+              <p id="Pname"></p>
+              <p id="Pprice"></p>
+            </div>
+          </li>         
+          <li id="li-product-content">
+            <div class="contentTblItem" id="contentTblItem">
+              <p id="Pname"></p>
+              <p id="Pprice"></p>
+            </div>
+          </li>         
+          <li id="li-product-content">
+            <div class="contentTblItem" id="contentTblItem">
+              <p id="Pname"></p>
+              <p id="Pprice"></p>
+            </div>
+          </li>         
+          <li id="li-product-content">
+            <div class="contentTblItem" id="contentTblItem">
+              <p id="Pname"></p>
+              <p id="Pprice"></p>
+            </div>
+          </li>         
+        </ul>
+        <div class="cartControl">
+          <span id="inc" onclick="cartCounter('+')">+</span>
+          <input type="number" disabled readonly value=1 class="inputText" id="cart-input"></input>
+          <span id="dec" onclick="cartCounter('-')">-</span>
+        </div>        
+        <button class="addToCart">הוספה לסל</button>
+        <p>בקניה מעל 249 - משלוח חינם(עד 5 ימי אספקה)</p>
+        <div class="product-details-div">
+          <div id="productDetails" class="product-details">
+            <div class="tabDiv">
+              <button class="details-btn" id="">על הפריט</button>
+              <button class="shipping-btn">משלוחים והחזרות</button>
+            </div>
+            <p>תיאור הפריט</p>
+            <strong class="static-details"><span>הרכב החומר</span> </strong>
+            <span class="static-text">חומר ממנו עשוי</span>
+            <strong><span>מידות</span></strong>
+            <ul  id="dbList">
+              <li>1פריט מספר</li>
+              <li>2פריט מספר</li>
+              <li>3פריט מספר</li>
+              <li>4פריט מספר</li>
+              <li>5פריט מספר</li>
+              <li>6פריט מספר</li>
+            </ul>
+              <strong class="static-details"><span >צפיפות</span></strong>
+              <span class="static-text">צפיפות</span>
+              <strong class="static-details"><span >הוראות טיפול</span></strong>
+              <span class="static-text">הוראות טיפול </span>
+              <strong class="static-details"><span  >מספר דגם</span></strong>
+              <span class="static-text">מספר דגם </span>
+              <span class="static-text">ארץ ייצור </span>
+          </div>
+          <p class="productionText">המוצרים המוצעים באתר מיובאים ע"י/מיובאים/מיוצרים<br/> עבור: קבוצת גולף א.ק. בע"מ (ח.צ. 510289564), רחוב<br/> המלאכה 5, נתניה</p>
+        </div>
+        <div class="clubMembers">
+          <div class="clubMembersText">
+            <span
+              >חברי מועדון קבוצת גולף? תוכלו לממש ולצבור נקודות גם באתר!</span
+            >
+            <span> | תומכי מכירה מועדון כרטיס מתנה (10)</span>
+          </div>
+          <img
+            src="https://www.golfco.co.il/pub/media/idus_banner/golfcocard_copy.png"
+            width="70px"
+          />
+        </div>
+      </div>
+      <div class="productGallery">
+        <ul>
+          <div class="columnDiv">
+            <li>
+              <img
+                class="columImage images" 
+                src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_a-16437966642688711.jpg"
+              />
+            </li>
+          </div>
+          <div class="rowDiv">
+            <li class="liRowImage">
+              <img
+                class="rowImage images"
+                src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_b-16437966653106807.jpg"
+              />
+            </li>
+            <li class="liRowImage">
+              <img
+                class="rowImage images"
+                src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_d-16437966672846269.jpg"
+              />
+            </li>
+          </div>
+          <div class="columnDiv">
+            <li>
+              <img
+                class="columImage images"
+                src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_e-16437966683514640.jpg"
+              />
+            </li>
+          </div>
+          <div class="rowDiv">
+            <li class="liRowImage">
+              <img
+                class="rowImage images"
+                src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5668047_121_f-16437966693281811.jpg"
+              />
+            </li>
+            <li class="liRowImage">
+              <img
+                class="rowImage images"
+                src="https://www.golfco.co.il/pub/media/catalog/product/cache/a1ead2c2961e2ce13911c89cbb3a882f/5/6/5667947_121_a-16437264162337049.jpg"
+              />
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
