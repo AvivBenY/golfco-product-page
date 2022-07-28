@@ -1,9 +1,6 @@
 @import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
-
 @import url(http://fonts.googleapis.com/earlyaccess/notosanshebrew.css);
-
 @import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
-
 @import url(http://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
 
 body{
@@ -29,10 +26,8 @@ body{
     flex-wrap: wrap;
 }
 
- /* font-family: 'FuturaPT','SimplerPro',Arial,sans-serif; */
  .content-container{
-  font-family: 'Noto Sans Hebrew', serif;
-
+  font-family: 'Noto Sans Hebrew';
   margin-top: 7%;
   width: 50%;
   display: flex;
@@ -55,16 +50,6 @@ ul{
     cursor: pointer;
     height: 3.8rem;
   }
-/* .ul-content {
-    direction: rtl;
-    display: table;
-    border-collapse: collapse;
-    margin: 0;
-    padding: 0;
-    table-layout: fixed;
-    width: 100%;
-    width: 200px;
-  } */
 
   .contentTblItem{
     width: 80%;
@@ -73,8 +58,10 @@ ul{
     flex-direction: row;
     justify-content: space-between  ;
   }
+  .contentTblItem:hover{
+    cursor: pointer;
+  }
 .cartControl{
-    
     width: 50px;
   display: flex;
   flex-direction: row;
@@ -280,10 +267,12 @@ figure.zoom img {
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
 
   .carousel{
     display: block;
+    width: 80%;
   }
 
   .productGallery{
@@ -304,6 +293,13 @@ figure.zoom img {
   .ulContent{
     width: 100%;
   }
+  .emptyHeart{    
+    display: none;
+  }
+  .redHeart{    
+    display: none;
+  }
+  
 }
 
 /* Carousel */
@@ -362,4 +358,21 @@ figure.zoom img {
 .btn-next {
   top: 45%;
   right: 2%;
+}
+
+
+/* Hearts */
+.emptyHeart{
+  position: absolute;
+  top: 70px;
+  left: 660px;
+  width: 70;
+  display: block;
+}
+.redHeart{
+  position: absolute;
+  top: 70px;
+  left: 660px;
+  width: 40;
+  display: none;
 }

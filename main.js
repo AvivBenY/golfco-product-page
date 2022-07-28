@@ -1,20 +1,26 @@
+//HTML elements
 const contentChart = document.getElementById('ul-content');
 const detailsDiv = document.getElementById('productDetails');
 const dbList = document.getElementById('dbList');
 const contentTblItem = document.querySelectorAll('.contentTblItem');
-const contentTblPrice = document.querySelectorAll('#Pprice');
 const imagesArr = document.querySelectorAll('.images');
 const Dbtn = document.getElementById('detailsBtn');
 const Sbtn = document.getElementById('shippingBtn');
 const shippingDiv = document.getElementById('shippingDiv');
 const zoomImgs = document.querySelectorAll('.zoom');
-const liProductContent = document.querySelectorAll('#li-product-content');
 let cartCnt = document.getElementById('cart-input');
 let priceRange = document.getElementById('priceRange');
 const slides = document.querySelectorAll(".slide");
 const imgSlides = document.querySelectorAll(".slider-image");
 const gallery = document.querySelector(".productGallery")
 const carousel = document.querySelector(".carousel")
+const emptyHeart = document.querySelector(".emptyHeart")
+const redHeart = document.querySelector(".redHeart")
+const nextSlide = document.querySelector(".btn-next");
+const prevSlide = document.querySelector(".btn-prev");
+
+
+// Variables
 const db = [{
     stock: [
         {
@@ -119,15 +125,21 @@ const db = [{
     modelNumber: 86680059900,
     madeIn: 'טורקיה'
 }]
+
+let curSlide = 0;
+let maxSlide = slides.length - 1;
 let w = window.innerWidth;
 const dbStock = db[0].stock
 const arr = []
 let index;
+
+//functions
 fillData();
 fillDbData();
 setPriceRange();
 setPrice();
 
+//Price Change & decore
 function setPrice(){
     for (let j = 0; j < contentTblItem.length; j++) {
         contentTblItem[j].children[0].classList.remove('bold');
@@ -142,7 +154,7 @@ for (let i = 0; i < contentTblItem.length; i++) {
     return
 })}  }
 
-
+//Set Information 
 function setPriceRange(){
     for (let i = 0; i < dbStock.length; i++) {
         arr.push(dbStock[i].price)
@@ -169,17 +181,6 @@ function fillData() {
     }
 }
 
-function cartCounter(act) {
-    console.log('a');
-    if (act === '+' && cartCnt.value < 10) {
-        cartCnt.value++;
-    }
-    else if (act === '-' && cartCnt.value > 1) {
-        cartCnt.value--;
-    }
-    return
-}
-
 function fillDbData() {
     detailsDiv.children[0].innerHTML = db[0].description;
     detailsDiv.children[2].innerHTML = db[0].composition;
@@ -192,6 +193,21 @@ function fillDbData() {
     }
 }
 
+// -/+ Button
+function cartCounter(act) {
+    console.log('a');
+    if (act === '+' && cartCnt.value < 10) {
+        cartCnt.value++;
+    }
+    else if (act === '-' && cartCnt.value > 1) {
+        cartCnt.value--;
+    }
+    return
+}
+
+
+
+//Tabs Toggle
 function changeToDisplay(){
     detailsDiv.style.display = "block";
     shippingDiv.style.display = "none";
@@ -206,6 +222,7 @@ function changeToShipping(){
     Dbtn.classList.remove('bottom-border')
 }	
 
+//Img Zoom
 function zoom(e){
     var zoomer = e.currentTarget;
     e.offsetX ? offsetX = e.offsetX : offsetX = e.touches[0].pageX
@@ -221,43 +238,38 @@ slides.forEach((slide, indx) => {
     slide.style.transform = `translateX(${indx * 100}%)`;
   });
 
-// select next slide button
-const nextSlide = document.querySelector(".btn-next");
-
-// current slide counter
-let curSlide = 0;
-// maximum number of slides
-let maxSlide = slides.length - 1;
-
-// add event listener and navigation functionality
 nextSlide.addEventListener("click", function () {
-  // check if current slide is the last and reset current slide
   if (curSlide === maxSlide) {
     curSlide = 0;
   } else {
     curSlide++;
   }
 
-//   move slide by -100%
   slides.forEach((slide, indx) => {
     slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
   });
 });
 
-// select prev slide button
-const prevSlide = document.querySelector(".btn-prev");
 
-// add event listener and navigation functionality
 prevSlide.addEventListener("click", function () {
-  // check if current slide is the first and reset current slide to last
   if (curSlide === 0) {
     curSlide = maxSlide;
   } else {
     curSlide--;
   }
 
-  //   move slide by 100%
   slides.forEach((slide, indx) => {
     slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
   });
 });
+
+//Hearts Event
+function likeEvent(isLike){
+    if(isLike=== 1){
+        emptyHeart.style.display = 'none';
+        redHeart.style.display = 'block';
+    }else if(isLike === 0){
+        emptyHeart.style.display = 'block'
+        redHeart.style.display = 'none'
+    }
+}
